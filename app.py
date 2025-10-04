@@ -1,21 +1,11 @@
 from flask import Flask, request, jsonify
 import logging
-from utils import get_recommendation
+from utils import get_recommendation, get_weather_data
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 
-# Dummy weather function, replace with real API as needed
-def get_weather_data(date, location):
-    # location: {"latitude": float, "longitude": float}
-    # date: str (YYYY-MM-DD)
-    return {
-        "temp": 22,
-        "precipitation": 0,
-        "wind": 5,
-        "cloud_cover": 20
-    }
 
 
 # --- New Recommendation API ---
